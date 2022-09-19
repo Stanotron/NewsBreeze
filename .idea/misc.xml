@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/drawable/bookamrk.xml" value="0.1995" />
+        <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/drawable/fade_in.xml" value="0.1995" />
         <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/drawable/ic_bookmark.xml" value="0.1995" />
         <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/layout/activity_splash_screen.xml" value="0.24895833333333334" />
       </map>
     </option>
   </component>
