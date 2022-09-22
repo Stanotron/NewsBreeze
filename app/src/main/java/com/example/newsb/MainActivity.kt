@@ -3,35 +3,22 @@ package com.example.newsb
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.android.volley.toolbox.JsonObjectRequest
+import com.android.volley.toolbox.Volley
 import com.example.newsb.Modules.NewsAdapter
-import com.example.newsb.Modules.NewsData
+import com.example.newsb.Modules.News
 import com.example.newsb.databinding.ActivityMainBinding
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import org.json.JSONObject
-import java.net.URL
+import com.android.volley.Request
+import com.android.volley.Response
 
 private lateinit var binding: ActivityMainBinding
-
-val news : ArrayList<NewsData> = arrayListOf()
+private lateinit var newsAdapter: NewsAdapter
 
 class MainActivity : AppCompatActivity() {
-//    private val news2 : ArrayList<NewsData> = arrayListOf(
-//        NewsData("heading1\ncontinues...", "line 1 \nline 2\nline 3", "20-01-2022"),
-//        NewsData("heading2\n" +
-//                "continues...", "line 1 \nline 2\nline 3", "20-01-2022"),
-//        NewsData("heading3\n" +
-//                "continues...", "line 1 \nline 2\nline 3", "20-01-2022"),
-//        NewsData("heading4\n" +
-//                "continues...", "line 1 \nline 2\nline 3", "20-01-2022"),
-//        )
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,35 +30,48 @@ class MainActivity : AppCompatActivity() {
         mLoadAnimation.duration = 500
         view.startAnimation(mLoadAnimation)
 
-        getApiResult()
-
         binding.rvNews.layoutManager = LinearLayoutManager(this)
-        val newsAdapter = NewsAdapter(this,news)
+        newsAdapter = NewsAdapter(this)
         binding.rvNews.adapter = newsAdapter
 
+        getNews()
+
 
     }
 
-    private fun getApiResult(){
-            val API = "https://newsapi.org/v2/top-headlines?country=in&apiKey=da99b4a370234e199a1094848ff2a760"
-            Log.d("ApI","$API")
-                GlobalScope.launch(Dispatchers.IO){
-                    try{
-                        val apiResult = URL(API).readText()
-                        val jsonObject = JSONObject(apiResult)
-                        val heading : String = jsonObject.getJSONObject("title").toString()
-                        val desc : String = jsonObject.getJSONObject("description").toString()
-                        val date : String = jsonObject.getJSONObject("publishedAt").toString()
-                        val image : String = jsonObject.getJSONObject("urlToImage").toString()
-                        Log.d("Main","$heading")
-                        Log.d("Main",apiResult)
-                        withContext(Dispatchers.Main){
-                            news.add(NewsData(image,heading,desc,date))
-                        }
-                    }
-                    catch (e:Exception){
-                        Log.e("Main","$e")
-                    }
+    private fun getNews(){
+        val queue = Volley.newRequestQueue(this)
+        val url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=da99b4a370234e199a1094848ff2a760"
+        val jsonObject = object : JsonObjectRequest(
+            Request.Method.GET,url,null,
+            Response.Listener {
+                val newsJsonArray = it.getJSONArray("articles")
+                val newsArray = ArrayList<News>()
+                for(i in 0 until newsJsonArray.length()){
+                    val newsJsonObject = newsJsonArray.getJSONObject(i)
+                    val news = News(
+                        newsJsonObject.getString("urlToImage"),
+                        newsJsonObject.getString("title"),
+                        newsJsonObject.getString("description"),
+                        newsJsonObject.getString("publishedAt"),
+                        newsJsonObject.getString("url"),
+                        )
+                    newsArray.add(news)
                 }
+                newsAdapter.update(newsArray)
+            },
+            Response.ErrorListener {
+
+            }
+        ) {
+            override fun getHeaders(): MutableMap<String, String> {
+                val headers = HashMap<String, String>()
+                headers["User-Agent"] = "Mozilla/5.0"
+                return headers
+            }
+        }
+
+        queue.add(jsonObject)
     }
+
 }
