@@ -1,6 +1,8 @@
 package com.example.newsb.Modules
 
 import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -23,9 +25,16 @@ class NewsAdapter(val context: Context): RecyclerView.Adapter<NewsAdapter.ViewHo
         with(holder){
             with(newsList[position]){
                 binding.tvNews.text = this.heading
-                binding.tvDescritpion.text = this.desc
+                binding.tvDescription.text = this.desc
                 binding.tvDate.text = this.date
                 Glide.with(context).load(this.imageUrl).into(binding.ivNews)
+                binding.tvNews.setOnClickListener{
+                    val intent = Intent(binding.tvNews.context,NewsDescription::class.java)
+                    val message = position.toString()
+                    Log.d("aaaaaaaaaaaaaaaaiindex","$message")
+                    intent.putExtra("key",message)
+                    binding.tvNews.context.startActivity(intent)
+                }
             }
         }
     }

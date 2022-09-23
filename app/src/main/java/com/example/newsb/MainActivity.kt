@@ -15,10 +15,13 @@ import com.example.newsb.databinding.ActivityMainBinding
 import com.android.volley.Request
 import com.android.volley.Response
 
-private lateinit var binding: ActivityMainBinding
+
+@SuppressLint("StaticFieldLeak")
 private lateinit var newsAdapter: NewsAdapter
+val newsArray = ArrayList<News>()
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
     @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,15 +49,17 @@ class MainActivity : AppCompatActivity() {
             Request.Method.GET,url,null,
             Response.Listener {
                 val newsJsonArray = it.getJSONArray("articles")
-                val newsArray = ArrayList<News>()
                 for(i in 0 until newsJsonArray.length()){
                     val newsJsonObject = newsJsonArray.getJSONObject(i)
                     val news = News(
                         newsJsonObject.getString("urlToImage"),
                         newsJsonObject.getString("title"),
                         newsJsonObject.getString("description"),
-                        newsJsonObject.getString("publishedAt"),
+                        newsJsonObject.getString("publishedAt").substring(0,10),
                         newsJsonObject.getString("url"),
+                        newsJsonObject.getString("content"),
+                        newsJsonObject.getString("author"),
+//                        newsJsonObject.getString("name")
                         )
                     newsArray.add(news)
                 }

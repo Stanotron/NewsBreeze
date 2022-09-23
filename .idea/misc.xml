@@ -4,15 +4,22 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/drawable/bookamrk.xml" value="0.1995" />
-        <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/drawable/bookmark.xml" value="0.147" />
+        <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/drawable/bookmark.xml" value="0.16" />
         <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/drawable/fade_in.xml" value="0.1995" />
+        <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/drawable/ic_arrow_back.xml" value="0.1515" />
         <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/drawable/ic_bookmark.xml" value="0.16799999999999998" />
+        <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/drawable/ic_bookmark2.xml" value="0.1515" />
+        <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/drawable/ic_bookmark_border.xml" value="0.1515" />
+        <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1515" />
         <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/drawable/round_button.xml" value="0.147" />
+        <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/drawable/rounded_news_description.xml" value="0.1515" />
         <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/font/palladio.xml" value="0.2791666666666667" />
         <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/font/unifrakturmaguntia.xml" value="0.20277777777777778" />
-        <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/layout/activity_splash_screen.xml" value="0.24895833333333334" />
-        <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/layout/news_unit.xml" value="0.264" />
+        <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/layout/news_description.xml" value="0.264" />
+        <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/layout/news_saved.xml" value="0.2153153153153153" />
+        <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/layout/news_unit.xml" value="0.1" />
         <entry key="..\:/Users/Tushar Jain/AndroidStudioProjects/NewsB/app/src/main/res/layout/test.xml" value="0.6" />
       </map>
     </option>

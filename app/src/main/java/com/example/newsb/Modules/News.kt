@@ -5,5 +5,8 @@ data class News(
     val heading : String,
     val desc : String,
     val date : String,
-    val url : String
+    val url : String,
+    val data : String,
+    val author : String,
+//    val org : String
 )
