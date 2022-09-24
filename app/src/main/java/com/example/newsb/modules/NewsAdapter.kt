@@ -1,13 +1,15 @@
-package com.example.newsb.Modules
+package com.example.newsb.modules
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsb.databinding.NewsUnitBinding
 import com.bumptech.glide.Glide
+import com.example.newsb.R
 
 
 class NewsAdapter(val context: Context): RecyclerView.Adapter<NewsAdapter.ViewHolder>(){
@@ -34,6 +36,10 @@ class NewsAdapter(val context: Context): RecyclerView.Adapter<NewsAdapter.ViewHo
                     Log.d("aaaaaaaaaaaaaaaaiindex","$message")
                     intent.putExtra("key",message)
                     binding.tvNews.context.startActivity(intent)
+                }
+                binding.btBookmark.setOnClickListener{
+                    binding.btBookmark.setImageResource(R.drawable.ic_bookmark)
+                    binding.btBookmark.setBackgroundResource(R.color.green)
                 }
             }
         }

@@ -1,6 +1,7 @@
 package com.example.newsb
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -9,11 +10,12 @@ import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
-import com.example.newsb.Modules.NewsAdapter
-import com.example.newsb.Modules.News
+import com.example.newsb.modules.NewsAdapter
+import com.example.newsb.modules.News
 import com.example.newsb.databinding.ActivityMainBinding
 import com.android.volley.Request
 import com.android.volley.Response
+import com.example.newsb.modules.SavedNews
 
 
 @SuppressLint("StaticFieldLeak")
@@ -38,7 +40,10 @@ class MainActivity : AppCompatActivity() {
         binding.rvNews.adapter = newsAdapter
 
         getNews()
-
+        binding.ibMainBookmark.setOnClickListener{
+            val intent = Intent(binding.ibMainBookmark.context,SavedNews::class.java)
+            binding.ibMainBookmark.context.startActivity(intent)
+        }
 
     }
 

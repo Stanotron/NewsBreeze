@@ -1,4 +1,4 @@
-package com.example.newsb.Modules
+package com.example.newsb.modules
 
 data class News(
     val imageUrl : String,

@@ -1,4 +1,4 @@
-package com.example.newsb.Modules
+package com.example.newsb.modules
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,6 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.newsb.MainActivity
-import com.example.newsb.R
 import com.example.newsb.databinding.NewsDescriptionBinding
 import com.example.newsb.newsArray
 

@@ -24,20 +24,43 @@
         android:id="@+id/cvSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="35dp"
         android:layout_marginHorizontal="30dp"
-        app:cardCornerRadius="18dp"
-        app:cardElevation="1dp"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
-        <SearchView
-            android:id="@+id/svNews"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:queryHint="Search"
-            android:iconifiedByDefault="false"/>
+        <ImageView
+            android:id="@+id/ivSearch"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginHorizontal="15dp"
+            android:background="@drawable/ic_search"
+            android:alpha="0.15"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:textSize="21sp"
+            android:fontFamily="@font/montserrat_medium"
+            android:alpha="0.4"
+            android:layout_marginVertical="7dp"
+            android:layout_marginHorizontal="50dp"
+            tools:ignore="HardcodedText" />
+
+        <ImageButton
+            android:id="@+id/ibSort"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="275dp"
+            android:layout_marginTop="5dp"
+            android:drawable="@mipmap/ic_sort2_foreground"
+            tools:ignore="SpeakableTextPresentCheck" />
     </androidx.cardview.widget.CardView>
 
     <ImageButton
@@ -45,7 +68,7 @@
         android:layout_width="48dp"
         android:layout_height="50dp"
         android:layout_marginTop="38dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"
         android:backgroundTint="#97C681"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
