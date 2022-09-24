@@ -117,14 +117,14 @@
             android:layout_height="43dp"
             android:layout_marginStart="280dp"
             android:layout_marginTop="30dp"
-            android:backgroundTint="#97C681"
-            android:bottomLeftRadius="25dp"
-            android:bottomRightRadius="25dp"
-            android:text="Save"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="15dp"
+            android:text="Save"
+            android:backgroundTint="#97C681"
             android:topLeftRadius="25dp"
             android:topRightRadius="25dp"
+            android:bottomLeftRadius="25dp"
+            android:bottomRightRadius="25dp"
             tools:ignore="TouchTargetSizeCheck" />
 
         <TextView
