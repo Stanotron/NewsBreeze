@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.newsb.modules.SavedNewsAdapter.*
 import com.example.newsb.databinding.SavedNewsUnitBinding
 
@@ -19,6 +20,9 @@ class SavedNewsAdapter (val context: Context, val items : ArrayList<SavedNewsDat
         with(holder){
             with(items[position]){
                 binding.tvSavedTitle.text = this.tag
+                binding.tvSavedDate.text = this.date + "." + this.editor
+                binding.tvSavedTag.text = this.tag
+                Glide.with(context).load(this.imageUrl).into(binding.ivSavedNewsImage)
             }
         }
     }

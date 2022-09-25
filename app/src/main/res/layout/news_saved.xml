@@ -67,12 +67,12 @@
 
         <ImageButton
             android:id="@+id/ibSort"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="275dp"
-            android:layout_marginTop="5dp"
-            android:drawable="@mipmap/ic_sort2_foreground"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="290dp"
+            android:alpha="0.7"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ic_sort_svg" />
     </androidx.cardview.widget.CardView>
 
     <TextView
@@ -122,6 +122,7 @@
             android:layout_marginBottom="50dp"
             android:layout_marginHorizontal="20dp"
             />
+
 
     </androidx.cardview.widget.CardView>
 

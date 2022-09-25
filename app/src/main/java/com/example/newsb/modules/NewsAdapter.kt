@@ -10,7 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.newsb.databinding.NewsUnitBinding
 import com.bumptech.glide.Glide
 import com.example.newsb.R
+import java.util.*
+import kotlin.collections.ArrayList
 
+var SavedNewsArray : ArrayList<SavedNewsData> = arrayListOf()
 
 class NewsAdapter(val context: Context): RecyclerView.Adapter<NewsAdapter.ViewHolder>(){
 
@@ -33,13 +36,23 @@ class NewsAdapter(val context: Context): RecyclerView.Adapter<NewsAdapter.ViewHo
                 binding.tvNews.setOnClickListener{
                     val intent = Intent(binding.tvNews.context,NewsDescription::class.java)
                     val message = position.toString()
-                    Log.d("aaaaaaaaaaaaaaaaiindex","$message")
+//                    Log.d("index","$message")
                     intent.putExtra("key",message)
                     binding.tvNews.context.startActivity(intent)
                 }
                 binding.btBookmark.setOnClickListener{
-                    binding.btBookmark.setImageResource(R.drawable.ic_bookmark)
-                    binding.btBookmark.setBackgroundResource(R.color.green)
+//                    if(SavedNewsArray.any{ it.title == this.heading}){
+//                        binding.btBookmark.setImageResource(R.drawable.bookmark_small)
+//                        SavedNewsArray.removeIf{
+//                            SavedNewsArray.any{ it.title == this.heading}
+//                        }
+//                    }else{
+//                        binding.btBookmark.setImageResource(R.drawable.ic_bookmark)
+//                        binding.btBookmark.setBackgroundResource(R.color.green)
+                        SavedNewsArray.add(
+                            SavedNewsData(this.imageUrl,null,this.heading,this.date,this.author)
+                        )
+//                    }
                 }
             }
         }

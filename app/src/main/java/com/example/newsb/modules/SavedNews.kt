@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.newsb.databinding.NewsSavedBinding
 
-private lateinit var SavedNewsArray : ArrayList<SavedNewsData>
+
 
 class SavedNews : AppCompatActivity() {
     private lateinit var binding: NewsSavedBinding
