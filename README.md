@@ -36,7 +36,7 @@ clicking.
 
 ## Screenshots
 
-<img height="450px" src="https://user-images.githubusercontent.com/100690010/192336536-3344fe4b-2c35-4282-bfc2-4bc8e4afdfd7.png" />
+<img height="400px" src="https://user-images.githubusercontent.com/100690010/192336536-3344fe4b-2c35-4282-bfc2-4bc8e4afdfd7.png" />
 
 
 
