@@ -33,14 +33,12 @@ class NewsAdapter(val context: Context): RecyclerView.Adapter<NewsAdapter.ViewHo
                 binding.clNewsUnit.setOnClickListener{
                     val intent = Intent(binding.clNewsUnit.context,NewsDescription::class.java)
                     val message = position.toString()
-//                    Log.d("index","$message")
                     intent.putExtra("key",message)
                     binding.clNewsUnit.context.startActivity(intent)
                 }
                 binding.btRead.setOnClickListener{
                     val intent = Intent(binding.btRead.context,NewsDescription::class.java)
                     val message = position.toString()
-//                    Log.d("index","$message")
                     intent.putExtra("key",message)
                     binding.btRead.context.startActivity(intent)
                 }

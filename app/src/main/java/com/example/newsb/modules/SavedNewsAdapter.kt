@@ -27,7 +27,6 @@ class SavedNewsAdapter (val context: Context, val items : ArrayList<SavedNewsDat
                 binding.tvSavedTitle.setOnClickListener{
                     val intent = Intent(binding.tvSavedTitle.context,NewsDescription::class.java)
                     val message = position.toString()
-//                    Log.d("index","$message")
                     intent.putExtra("key",message)
                     binding.tvSavedTitle.context.startActivity(intent)
                 }

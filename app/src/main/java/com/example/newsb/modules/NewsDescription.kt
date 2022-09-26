@@ -29,7 +29,6 @@ class NewsDescription : AppCompatActivity() {
         binding2 = NewsUnitBinding.inflate(layoutInflater)
 
         val index = intent.getStringExtra("key")!!.toInt()
-//        Log.d("aaaaaaaaaaaaaaaa","$index")
         binding.tvDescTitle.text = newsArray[index].heading
         binding.tvDescDate.text = newsArray[index].date
         binding.tvAuthor.text = newsArray[index].author

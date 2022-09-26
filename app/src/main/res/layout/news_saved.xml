@@ -117,6 +117,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvSavedNews"
+            android:requiresFadingEdge="vertical"
             android:layout_width="match_parent"
             android:layout_height="375dp"
             android:layout_marginHorizontal="20dp"

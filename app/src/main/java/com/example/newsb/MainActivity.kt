@@ -64,7 +64,6 @@ class MainActivity : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int){}
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int){
-                Log.d("aaaaaaaaaa","${newsArray.size}")
                 newsArray.clear()
                 if(binding.etSearch.text.isNotEmpty()){
                     val text = binding.etSearch.text
@@ -85,7 +84,6 @@ class MainActivity : AppCompatActivity() {
                 .setPositiveButton("OK"){_,_ ->
                     val from = binding2.etDateFrom.text
                     val to = binding2.etDateTo.text
-                    Log.d("dddddddd","$from")
                     newsArray.clear()
                     getNews("https://newsapi.org/v2/everything?q=a&from=$from&to=$to&sortBy=popularity&apiKey=da99b4a370234e199a1094848ff2a760")
                 }
