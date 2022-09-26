@@ -21,7 +21,7 @@ class SavedNewsAdapter (val context: Context, val items : ArrayList<SavedNewsDat
         with(holder){
             with(items[position]){
                 binding.tvSavedTitle.text = this.title
-                binding.tvSavedDate.text = this.date + " . " + this.editor
+                binding.tvSavedDate.text = this.date + " · " + this.editor
                 binding.tvSavedTag.text = this.tag
                 Glide.with(context).load(this.imageUrl).into(binding.ivSavedNewsImage)
                 binding.tvSavedTitle.setOnClickListener{
