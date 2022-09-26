@@ -8,5 +8,5 @@ data class News(
     val url : String,
     val data : String,
     val author : String,
-//    val org : String
+    val org : String
 )

@@ -2,15 +2,12 @@ package com.example.newsb.modules
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.Color
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsb.databinding.NewsUnitBinding
 import com.bumptech.glide.Glide
 import com.example.newsb.R
-import java.util.*
 import kotlin.collections.ArrayList
 
 var SavedNewsArray : ArrayList<SavedNewsData> = arrayListOf()
@@ -33,26 +30,45 @@ class NewsAdapter(val context: Context): RecyclerView.Adapter<NewsAdapter.ViewHo
                 binding.tvDescription.text = this.desc
                 binding.tvDate.text = this.date
                 Glide.with(context).load(this.imageUrl).into(binding.ivNews)
-                binding.tvNews.setOnClickListener{
-                    val intent = Intent(binding.tvNews.context,NewsDescription::class.java)
+                binding.clNewsUnit.setOnClickListener{
+                    val intent = Intent(binding.clNewsUnit.context,NewsDescription::class.java)
                     val message = position.toString()
 //                    Log.d("index","$message")
                     intent.putExtra("key",message)
-                    binding.tvNews.context.startActivity(intent)
+                    binding.clNewsUnit.context.startActivity(intent)
+                }
+                binding.btRead.setOnClickListener{
+                    val intent = Intent(binding.btRead.context,NewsDescription::class.java)
+                    val message = position.toString()
+//                    Log.d("index","$message")
+                    intent.putExtra("key",message)
+                    binding.btRead.context.startActivity(intent)
+                }
+                binding.btSave.setOnClickListener{
+                    if(SavedNewsArray.any{ it.title == this.heading.substring(0,35)+"..."}){
+                        binding.btBookmark.setImageResource(R.drawable.unsaved_bookmark)
+                        SavedNewsArray.removeIf{
+                            SavedNewsArray.any{ it.title == this.heading.substring(0,35)+"..."}
+                        }
+                    }else{
+                        binding.btBookmark.setImageResource(R.drawable.saved_bookmark)
+                        SavedNewsArray.add(
+                            SavedNewsData(this.imageUrl,null,this.heading.substring(0,35)+"...",this.date,this.author)
+                        )
+                    }
                 }
                 binding.btBookmark.setOnClickListener{
-//                    if(SavedNewsArray.any{ it.title == this.heading}){
-//                        binding.btBookmark.setImageResource(R.drawable.bookmark_small)
-//                        SavedNewsArray.removeIf{
-//                            SavedNewsArray.any{ it.title == this.heading}
-//                        }
-//                    }else{
-//                        binding.btBookmark.setImageResource(R.drawable.ic_bookmark)
-//                        binding.btBookmark.setBackgroundResource(R.color.green)
+                    if(SavedNewsArray.any{ it.title == this.heading.substring(0,35)+"..."}){
+                        binding.btBookmark.setImageResource(R.drawable.unsaved_bookmark)
+                        SavedNewsArray.removeIf{
+                            SavedNewsArray.any{ it.title == this.heading.substring(0,35)+"..."}
+                        }
+                    }else{
+                        binding.btBookmark.setImageResource(R.drawable.saved_bookmark)
                         SavedNewsArray.add(
-                            SavedNewsData(this.imageUrl,null,this.heading,this.date,this.author)
+                            SavedNewsData(this.imageUrl,null,this.heading.substring(0,35)+"...",this.date,this.author)
                         )
-//                    }
+                    }
                 }
             }
         }

@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="160dp"
         android:alpha="1"
         android:hint="00-00-00"
         android:textColor="@color/white"
@@ -93,20 +93,20 @@
 
         <TextView
             android:id="@+id/tvAuthor"
-            android:layout_width="wrap_content"
+            android:layout_width="175dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="100dp"
             android:layout_marginTop="30dp"
             android:hint="James Adam"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/tvAuthorOrg"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_marginStart="100dp"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="57dp"
             android:hint="Lorem Correspondant"
             android:textColor="@color/black"
             android:textSize="16sp" />
@@ -115,7 +115,7 @@
             android:id="@+id/btDescSave"
             android:layout_width="wrap_content"
             android:layout_height="43dp"
-            android:layout_marginStart="280dp"
+            android:layout_marginStart="285dp"
             android:layout_marginTop="30dp"
             android:textAppearance="@style/TextAppearance.AppCompat"
             android:textSize="15dp"
