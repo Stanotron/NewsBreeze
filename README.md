@@ -57,7 +57,7 @@ News Description
 
 <img height="400px" src="https://user-images.githubusercontent.com/100690010/192337914-5875b6c0-58d4-4789-8694-cfb0a554438c.png" />
 
-Bookmark Color in Savedd State
+Bookmark Color in Saved State
 
 <img height="400px" src="https://user-images.githubusercontent.com/100690010/192338028-ff320ad5-c2d2-4fdb-b75e-f72edbbeef5f.png" />
 
