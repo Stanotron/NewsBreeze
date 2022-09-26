@@ -112,7 +112,7 @@ class MainActivity : AppCompatActivity() {
                         newsJsonObject.getString("description"),
                         newsJsonObject.getString("publishedAt").substring(0,10),
                         newsJsonObject.getString("url"),
-                        newsJsonObject.getString("content"),
+                        newsJsonObject.getString("content").dropLast(13),
                         newsJsonObject.getString("author"),
                         sourceObject.getString("name")
                         )
