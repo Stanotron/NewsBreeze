@@ -1,6 +1,6 @@
 # NewsBreeze
 
-NewsBreeze is an unofficial newsApi client that gets the lastest breaking news to you.
+NewsBreeze is an unofficial newsApi client that gets the latest breaking news to you.
 
 ![icon](https://user-images.githubusercontent.com/100690010/192261890-3394b61e-0f68-4c5f-a815-01fb02a9ba07.png)
 
